@@ -42,7 +42,7 @@ const select = async (list) => {
 		{
 			type: 'input',
 			name: 'commit',
-			message: 'git commit -m',
+			message: 'git cz',
 		},
 	]);
 
