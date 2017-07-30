@@ -23,7 +23,7 @@ const execCommand = async ({ resets, files, commit }) => {
 	const commitCommand = `git commit -m ${JSON.stringify(commit)}`;
 	const excapeStr = (str) => str.replace(/`/g, '\\`');
 
-	const commands = [resetCommand, addCommand, commitCommand].map(excapeStr);
+	const commands = [resetCommand, addCommand].map(excapeStr);
 	const [result, stderr] = await exec(commands.join(' && '));
 
 	if (stderr) { throw new Error(stderr); }
@@ -38,12 +38,7 @@ const select = async (list) => {
 			name: 'files',
 			message: 'git add',
 			choices: list,
-		},
-		{
-			type: 'input',
-			name: 'commit',
-			message: 'git cz',
-		},
+		}
 	]);
 
 	const resets = list
