@@ -9,6 +9,5 @@ Thumbs.db
 .logs
 *.log
 node_modules
-lib
 **/.idea/**
 **/test/git/**
